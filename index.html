@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technical SEO & Ecommerce Product QA Tools | Practical AI Lab</title>
+<meta name="description" content="Check ecommerce product JSON-LD, audit H1 heading problems and track public competitor product price changes. Three practical PAL tools on Apify, with sample inputs and CSV/JSON exports.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/pal-website-qa-suite/">
+<meta property="og:type" content="website"><meta property="og:title" content="PAL | Ecommerce Quality Assurance Toolkit">
+<meta property="og:description" content="Audit product markup, heading structure, and price changes with exportable reports. Built for teams that ship websites.">
+<meta property="og:url" content="https://jojoagogog-beep.github.io/pal-website-qa-suite/">
+<meta name="theme-color" content="#0f1b28">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"PAL Ecommerce QA Tools","itemListElement":[{"@type":"ListItem","position":1,"name":"Ecommerce Product Schema Checker","url":"https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check"},{"@type":"ListItem","position":2,"name":"H1 Heading Checker","url":"https://apify.com/practical_ai_lab_jp/pal-h1-heading-checker"},{"@type":"ListItem","position":3,"name":"Competitor Price & Stock Monitor","url":"https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta"}]}</script>
+<style>
+:root{color-scheme:light;--dark:#0f1b28;--ink:#182b3b;--muted:#5c6978;--line:#dbe4ea;--teal:#116d69;--bg:#f4f8fa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #78a99f;outline-offset:4px}
+.wrap{width:min(1120px,calc(100% - 42px));margin:auto}
+header{background:var(--dark);color:#e6eff1}.top{display:flex;align-items:center;justify-content:space-between;min-height:78px;border-bottom:1px solid #ffffff23;gap:16px}.logo{font-size:14px;font-weight:780;letter-spacing:.16em;color:#c3f1e7}.nav{display:flex;gap:26px;font-size:13px;color:#c7d0d6}.nav a:hover{color:#8bffe0}
+.hero{padding:90px 0 100px;background:radial-gradient(ellipse 68% 90% at 94% 0%,#254a59 0%,transparent 70%),var(--dark)}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.24em;color:#8ed9c4;font-weight:800}.hero h1{font-size:clamp(37px,5.5vw,72px);max-width:900px;margin:18px 0 19px;line-height:1.09;letter-spacing:-.056em;font-weight:760}.hero p{max-width:650px;color:#c2d1da;font-size:18px;margin:0 0 30px}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.pills span{border:1px solid #ffffff33;border-radius:60px;padding:7px 13px;font-size:12px;color:#d0e8e3}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;font-weight:700;border-radius:8px;background:#b0efe1;color:#153d3c;transition:transform .12s,background .12s;gap:10px}.cta:hover{background:#d2fff3;transform:translateY(-1px)}.cta.secondary{background:transparent;border:1px solid #ffffff60;color:#f5fafd;margin-left:9px}
+main{padding:60px 0 70px}section{scroll-margin-top:25px}.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:0 0 25px}
+.kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:750}.heading h2{font-size:clamp(29px,3.3vw,40px);margin:6px 0 0;line-height:1.17;letter-spacing:-.035em}.heading p{max-width:400px;color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:white;padding:27px 25px 26px;border-radius:16px;border:1px solid #dbe3e7;box-shadow:0 8px 28px #15324508;display:flex;flex-direction:column;min-height:410px}.count{font-size:12px;letter-spacing:.13em;color:#7b9395;font-weight:760}.tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:#087a6e;background:#e3f5f0;border-radius:4px;align-self:start;padding:5px 8px;margin:21px 0 5px}
+.card h3{font-size:23px;line-height:1.18;letter-spacing:-.03em;margin:10px 0}.card p{color:#566878;font-size:14px;flex:1;margin:0 0 18px}.card ul{padding:0;margin:0 0 23px;list-style:none;font-size:13px;color:#425564}.card li{padding:4px 0 4px 20px;position:relative}.card li:before{content:"✓";color:#0c8c77;font-weight:bold;position:absolute;left:0}
+.card a.button{background:#122a37;color:white;padding:12px;border-radius:7px;font-size:13px;font-weight:750;text-align:center}.card a.button:hover{background:#116d69}
+.after{font-size:12px;color:#71808d;text-align:center;margin:21px 0 0}
+.section{margin-top:80px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.step{padding:26px 25px;border-top:2px solid #14685d;background:#eef4f5;border-radius:0 0 12px 12px}.step b{font-size:13px;color:var(--teal)}.step h3{font-size:18px;margin:10px 0}.step p{margin:0;color:#556977;font-size:14px}
+.note{margin-top:60px;background:#e6f2ed;border:1px solid #bad7ca;border-radius:15px;padding:25px 29px}.note h3{margin:0 0 5px;font-size:19px}.note p{margin:0;color:#4b6664}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:10px 0;padding:16px 20px}summary{font-weight:750;cursor:pointer}details p{font-size:14px;color:#586b79;margin:10px 0 0}
+footer{background:var(--dark);color:#adbfca;padding:35px 0;font-size:12px}footer .wrap{display:flex;justify-content:space-between;gap:25px}footer a{color:#caf0e4;text-decoration:underline}
+@media(max-width:830px){.cards{grid-template-columns:1fr}.card{min-height:0}.heading{display:block}.heading p{margin-top:12px}.steps{grid-template-columns:1fr}.hero{padding:70px 0 80px}}
+@media(max-width:480px){.wrap{width:calc(100% - 30px)}.nav{gap:12px}.hero h1{font-size:39px}.hero p{font-size:16px}.cta{display:flex}.cta.secondary{margin:10px 0 0}footer .wrap{display:block}}
+</style></head>
+<body>
+<header><div class="top wrap"><a class="logo" href="./" aria-label="Practical AI Lab home">PRACTICAL AI LAB <span aria-hidden="true">/ PAL</span></a>
+<nav class="nav" aria-label="Primary"><a href="#tools">Tools</a><a href="#workflow">Workflow</a><a href="#faq">FAQ</a></nav></div>
+<div class="hero"><div class="wrap"><div class="eyebrow">Practical, exportable website QA</div>
+<h1>Find the issues.<br>Ship the fix list.</h1>
+<p>Three focused tools for ecommerce teams, SEO consultants, and site operators. Check product structured data, heading structure, and competitor price signals without building your own scrapers.</p>
+<a class="cta" href="#tools">Explore the three tools <span aria-hidden="true">↓</span></a><a class="cta secondary" href="https://apify.com/practical_ai_lab_jp" rel="noopener noreferrer">Visit PAL on Apify</a>
+<div class="pills"><span>Structured results</span><span>Export CSV / JSON</span><span>Public page analysis</span><span>Pay-per-event models</span></div>
+</div></div></header>
+<main class="wrap">
+<section id="tools"><div class="heading"><div><div class="kicker">The toolkit</div><h2>One issue, one purpose-built audit.</h2></div>
+<p>Start with one public example URL. Review the output and live price on Apify before running a larger batch.</p></div>
+<div class="cards">
+<article class="card"><div class="count">01 / PRODUCT STRUCTURED DATA</div><span class="tag">Ecommerce SEO</span>
+<h3>Product JSON-LD Schema Checker</h3><p>Audit public product pages for Offer price, currency, availability, SKU, brand, images, canonical links, and missing metadata. Work through a prioritized issue list.</p>
+<ul><li>Up to 50 public product URLs per run</li><li>Detailed issues with suggested fixes</li><li>Export results as CSV or JSON</li></ul>
+<a class="button" href="https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check" rel="noopener noreferrer">Open Product Schema Checker ↗</a></article>
+<article class="card"><div class="count">02 / PAGE STRUCTURE</div><span class="tag">Technical SEO</span>
+<h3>H1 Heading & SEO Structure Audit</h3><p>Check public HTML pages for missing or multiple H1 headings and unexpected heading levels. Export a practical list for engineers or content teams.</p>
+<ul><li>Up to 18 public HTTPS pages</li><li>Repeatable issue fingerprints</li><li>Review suggestions and exportable findings</li></ul>
+<a class="button" href="https://apify.com/practical_ai_lab_jp/pal-h1-heading-checker" rel="noopener noreferrer">Open H1 Audit ↗</a></article>
+<article class="card"><div class="count">03 / PRICE INTELLIGENCE</div><span class="tag">Catalog operations</span>
+<h3>Competitor Price & Stock Monitor</h3><p>Compare published product price and stock-label metadata over repeated runs. Detect changes in structured public information, then export an alert-ready summary.</p>
+<ul><li>Up to 50 public product URLs</li><li>Price delta and availability signals</li><li>CSV / JSON for your existing workflow</li></ul>
+<a class="button" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta" rel="noopener noreferrer">Open Competitor Monitor ↗</a></article>
+</div><p class="after">All processing is provided through Apify. Review the individual tool's Pricing tab and terms before starting a paid run.</p></section>
+<section class="section" id="workflow"><div class="heading"><div><div class="kicker">A straightforward process</div><h2>From URLs to a review queue.</h2></div></div>
+<div class="steps"><div class="step"><b>STEP 01</b><h3>Choose the check</h3><p>Pick product metadata, heading structure, or public competitor price changes based on the problem your team needs to solve.</p></div>
+<div class="step"><b>STEP 02</b><h3>Run a small sample</h3><p>Open the Actor on Apify, inspect the example input, check live pricing, and start with a small public URL batch.</p></div>
+<div class="step"><b>STEP 03</b><h3>Review and act</h3><p>Inspect the dataset, export CSV/JSON, make approved changes in your own systems, and rerun to check the result.</p></div></div></section>
+<section class="note"><h3>Designed for review, not blind automation</h3><p>These tools inspect publicly accessible web page metadata, not live inventory or checkout truth. They do not automatically modify your website, send alert emails, or guarantee SEO rankings. JavaScript-only content may not be detected. Buyers should validate important findings before action.</p></section>
+<section id="faq" class="section"><div class="heading"><div><div class="kicker">Frequently asked</div><h2>Before you start</h2></div></div>
+<details><summary>Can I test without writing code?</summary><p>Yes. Each Apify Actor has a browser-based Input tab with an example to start from. Test one public page first, then explore API automation if useful.</p></details>
+<details><summary>How much do the tools cost?</summary><p>These are priced through Apify using event-based billing. Prices, free credits, limits and related infrastructure charges are set out in each Actor's live Pricing tab and can change. Review the full amount before executing.</p></details>
+<details><summary>Will the product checker read my Shopify admin?</summary><p>No. These tools are intended for public web page HTML/JSON-LD. They do not request Shopify administrative credentials or access private store data.</p></details>
+<details><summary>Can the price monitor send automatic notifications?</summary><p>Not by itself. It returns structured change indicators; connect the dataset to your own permitted alert workflow if needed.</p></details>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Practical AI Lab · Tools for practical quality assurance.</span>
+<span>Independent developer tools hosted on <a href="https://apify.com/practical_ai_lab_jp" rel="noopener noreferrer">Apify Store</a>. No tracking cookies on this page.</span></div></footer>
+</body></html>
